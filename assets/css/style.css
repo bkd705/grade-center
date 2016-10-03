@@ -1,0 +1,93 @@
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Muli', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*
+* Layout Styles
+*/
+
+.table-wrapper {
+  margin: 0 auto;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input[type=text] {
+  padding: 5px 10px;
+}
+
+
+/*
+* Table Styles
+*/
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: #ccc;
+}
+
+.tg td {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 0px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #ccc;
+  color: #333;
+  background-color: #fff;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.tg th {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 0px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #ccc;
+  color: #333;
+  background-color: #f0f0f0;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.tg .tg-9hbo {
+  font-weight: bold;
+  vertical-align: top
+}
+
+.tg .tg-b7b8 {
+  background-color: #f9f9f9;
+  vertical-align: top
+}
+
+.add-button {
+  padding: 6px 10px;
+  background: #7EA738;
+  color: white;
+  border: 1px solid rgba(0,0,0,0.15);
+  opacity: 0.8;
+  transition: all 250ms ease-in-out;
+}
+
+.add-button:hover {
+  cursor: pointer;
+  opacity: 1;
+}

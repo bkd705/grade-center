@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grade Center</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <script src="https://unpkg.com/vue@2.0.1/dist/vue.js" charset="utf-8"></script>
+</head>
+<body>
+  <div class="table-wrapper">
+    <h1>Grade Center</h1>
+    <table class="tg" id="gradeTable">
+      <tr>
+        <th class="tg-9hbo">Class Name</th>
+        <th class="tg-9hbo">Course Code</th>
+        <th class="tg-9hbo">Final Grade</th>
+        <th class="tg-9hbo"></th>
+      </tr>
+        <tr v-for="grade in grades">
+          <td class="tg-b7b8">{{ grade.classname }}</td>
+          <td class="tg-b7b8">{{ grade.coursecode }}</td>
+          <td class="tg-b7b8">{{ grade.finalgrade }}</td>
+          <td class="tg-b7b8"></td>
+        </tr>
+
+      <tr>
+        <td class="tg-b7b8"><input type="text" v-model="inputClassName" placeholder="Class Name"></td>
+        <td class="tg-b7b8"><input type="text" v-model="inputCourseCode" placeholder="Course Code"></td>
+        <td class="tg-b7b8"><input type="text" v-on:keyup.enter="addGrade(), gradeAverage()" v-model="inputFinalGrade" placeholder="Final Grade"></td>
+        <td class="tg-b7b8"><input type="submit" v-on:click="addGrade(), gradeAverage()" value="Add" class="add-button"></td>
+      </tr>
+      <tr>
+        <td class="tg-b7b8">Final Grade</td>
+        <td class="tg-b7b8"></td>
+        <td class="tg-b7b8">{{ average }}</td>
+        <td class="tg-b7b8"></td>
+    </table>
+  </div>
+
+  <script src="assets/js/script.js" charset="utf-8"></script>
+</body>
+</html>
