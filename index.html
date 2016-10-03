@@ -11,34 +11,35 @@
   <script src="https://unpkg.com/vue@2.0.1/dist/vue.js" charset="utf-8"></script>
 </head>
 <body>
-  <div class="table-wrapper">
+  <div class="table-wrapper" id="gradeTable">
     <h1>Grade Center</h1>
-    <table class="tg" id="gradeTable">
+    <table class="tg">
       <tr>
         <th class="tg-9hbo">Class Name</th>
         <th class="tg-9hbo">Course Code</th>
         <th class="tg-9hbo">Final Grade</th>
         <th class="tg-9hbo"></th>
       </tr>
-        <tr v-for="grade in grades">
+        <tr v-for="(grade, index) in grades">
           <td class="tg-b7b8">{{ grade.classname }}</td>
           <td class="tg-b7b8">{{ grade.coursecode }}</td>
           <td class="tg-b7b8">{{ grade.finalgrade }}</td>
-          <td class="tg-b7b8"></td>
+          <td class="tg-b7b8 button"><input type="submit" v-on:click="removeGrade(index), gradeAverage()" value="Delete" class="remove-button"></td>
         </tr>
 
       <tr>
         <td class="tg-b7b8"><input type="text" v-model="inputClassName" placeholder="Class Name"></td>
         <td class="tg-b7b8"><input type="text" v-model="inputCourseCode" placeholder="Course Code"></td>
-        <td class="tg-b7b8"><input type="text" v-on:keyup.enter="addGrade(), gradeAverage()" v-model="inputFinalGrade" placeholder="Final Grade"></td>
-        <td class="tg-b7b8"><input type="submit" v-on:click="addGrade(), gradeAverage()" value="Add" class="add-button"></td>
+        <td class="tg-b7b8"><input type="number" v-on:keyup.enter="addGrade(), gradeAverage()" v-model="inputFinalGrade" placeholder="Final Grade"></td>
+        <td class="tg-b7b8 button"><input type="submit" v-on:click="addGrade(), gradeAverage()" value="Add" class="add-button"></td>
       </tr>
       <tr>
-        <td class="tg-b7b8">Final Grade</td>
-        <td class="tg-b7b8"></td>
-        <td class="tg-b7b8">{{ average }}</td>
+        <td class="tg-b7b8">Grade Average</td>
+        <td class="tg-b7b8">Average = {{ average }}%</td>
+        <td class="tg-b7b8">Letter Grade = {{ letterGrade }}</td>
         <td class="tg-b7b8"></td>
     </table>
+    <p class="error" v-if="error.seen">{{ error.text }}</p>
   </div>
 
   <script src="assets/js/script.js" charset="utf-8"></script>

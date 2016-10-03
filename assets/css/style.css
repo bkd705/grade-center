@@ -22,10 +22,14 @@ body,html {
   flex-direction: column;
 }
 
-input[type=text] {
+input[type=text], input[type=number] {
   padding: 5px 10px;
 }
 
+p.error {
+  color: red;
+  font-size: 16px;
+}
 
 /*
 * Table Styles
@@ -50,6 +54,7 @@ input[type=text] {
   background-color: #fff;
   border-top-width: 1px;
   border-bottom-width: 1px;
+  text-align: center;
 }
 
 .tg th {
@@ -88,6 +93,20 @@ input[type=text] {
 }
 
 .add-button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.remove-button {
+  padding: 6px 10px;
+  background: #bc1812;
+  color: white;
+  border: 1px solid rgba(0,0,0,0.15);
+  opacity: 0.8;
+  transition: all 250ms ease-in-out;
+}
+
+.remove-button:hover {
   cursor: pointer;
   opacity: 1;
 }
